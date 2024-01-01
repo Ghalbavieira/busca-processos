@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="192x192" href="https://www.tjdft.jus.br/themes/tjdft/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+
+    <title>Busca de Processo</title>
+</head>
+<body>
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <h1 class="mb-0 title">Busca de Processos</h1>
+        <nav class="navbar" style="display: flex !important;">
+            <form class="container-fluid justify-content-end">
+                <button class="btn btn-outline-light me-2 my-2 my-lg-0" type="button" onclick="showQrCodePage()">QrCode</button>
+                <button class="btn btn-outline-light me-2" type="button" onclick="showBuscaPage()">Busca</button>
+            </form>
+        </nav>
+    </header>
+
+    <div id="buscaPage" class="container p-3 my-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <form id="searchForm" >
+                    <label for="selectField">Selecione o tipo:</label>
+                    <select class="mx-lg-2" id="selectField" name="selectField" required>
+                        <option value="numeroProtocolo">Número do Processo</option>
+                        <option value="cpf">CPF</option>
+                        <option value="CNPJ">CNPJ</option>
+                    </select>
+                    <label class="mx-lg-2" for="inputField">Digite:</label>
+                        <input type="text" id="inputField" name="inputField" required>
+                    <button class="mx-lg-2 px-5 py-2 border-radius bg-success text-white rounded-3 border-primary-subtle" type="submit">Procurar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row my-5 pt-3 justify-content-start align-items-center" style="border-top: 2px solid #000;">
+            <div class="col-auto mx-lg-2" >
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="qrCodePage" class="container p-3 my-5" style="display:none;">
+        <div id="qrCode"></div>
+    </div>
+
+
+
+<script src="/js/index.js"></script>
+<script src="/js/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
