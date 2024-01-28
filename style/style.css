@@ -46,6 +46,31 @@ option {
     height:160px;
     margin-top:15px;
   }
+
+  .select-button:active, .select-button:focus button:(:active) {
+    outline: none;
+    box-shadow: none;
+    background: #fff;
+    color: #000;
+  }
+
+  #loadingIndicator{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#loading{
+    position: fixed;
+    top: 60%;
+    left: 48%;
+    display: none;
+}
 @media (min-width: 768px) {
         
     .title{

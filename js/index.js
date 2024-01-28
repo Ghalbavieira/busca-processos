@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputField = document.getElementById('inputField');
     const resultDiv = document.getElementById('result');
     const searchForm = document.getElementById('searchForm');
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    const loadingText = document.getElementById('loading');
 
     async function scrapeWebsite() {
         const inputValue = inputField.value;
@@ -53,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
+        } finally {
+            loadingIndicator.style.display = 'none';
+            loadingText.style.display = 'none';
         }
     }
 
@@ -72,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function showBuscaPage() {
     document.getElementById('qrCodePage').style.display = 'none';
     document.getElementById('buscaPage').style.display = 'block';
+    document.getElementById('buscaPageTwo').style.display = 'none';
 }
 
    // QR Code Scanner
@@ -86,6 +92,7 @@ function showBuscaPage() {
 
     document.getElementById('buscaPage').style.display = 'none';
     document.getElementById('qrCodePage').style.display = 'block';
+    document.getElementById('buscaPageTwo').style.display = 'none';
 
     qrCodeDiv.innerHTML = '';  
 
@@ -129,3 +136,7 @@ function initializeWhatsAppClient() {
 
     client.initialize();
 }
+
+
+
+

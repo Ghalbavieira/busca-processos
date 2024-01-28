@@ -14,13 +14,14 @@
         <h1 class="mb-0 title">Busca de Processos</h1>
         <nav class="navbar" style="display: flex !important;">
             <form class="container-fluid justify-content-end">
-                <button class="btn btn-outline-light me-2 my-2 my-lg-0" type="button" onclick="showQrCodePage()">QrCode</button>
-                <button class="btn btn-outline-light me-2" type="button" onclick="showBuscaPage()">Busca</button>
+                <button class="btn btn-outline-light me-2 my-2 my-lg-0 select-button" type="button" onclick="showQrCodePage()">QrCode</button>
+                <button class="btn btn-outline-light me-2 select-button" id="busca" type="button" onclick="showBuscaPage()">Busca</button>
+                <button class="btn btn-outline-light me-2 select-button" type="button" onclick="showBuscaPageTwo()">Busca Completa</button>
             </form>
         </nav>
     </header>
 
-    <div id="buscaPage" class="container p-3 my-5">
+    <div id="buscaPage" class="container p-3 my-5" style="display:none;">
         <div class="row justify-content-center align-items-center">
             <div class="col-auto">
                 <form id="searchForm" >
@@ -45,6 +46,34 @@
     </div>
 
 
+    <div id="buscaPageTwo" class="container p-3 my-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <form id="searchFormTwo">
+                    <label for="selectFieldTwo">Selecione o tipo:</label>
+                    <select class="mx-lg-2" id="selectFieldTwo" name="selectFieldTwo" required>
+                        <option value="numeroProtocolo">Número do Processo</option>
+                        <option value="cpf">CPF</option>
+                        <option value="CNPJ">CNPJ</option>
+                    </select>
+                    <label class="mx-lg-2" for="inputFieldTwo">Digite:</label>
+                    <input type="text" id="inputFieldTwo" name="inputFieldTwo" required>
+                    <button class="mx-lg-2 px-5 py-2 border-radius bg-success text-white rounded-3 border-primary-subtle"
+                            type="submit">Procurar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row my-5 pt-3 justify-content-start align-items-center" style="border-top: 2px solid #000;">
+            <div class="col-auto mx-lg-2">
+                <div id="resultado"></div>
+            </div>
+        </div>
+    </div>
+    <div class="spinner-border text-danger"id="loadingIndicator" role="status">    
+    </div>
+    <span id="loading">Carregando...</span>
 
     <div id="qrCodePage" class="container p-3 my-5" style="display:none;">
         <div id="qrCode"></div>
@@ -53,7 +82,10 @@
 
 
 <script src="/js/index.js"></script>
+<script src="/js/second-index.js"></script>
 <script src="/js/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
