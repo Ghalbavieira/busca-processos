@@ -48,21 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p><strong>Polo Ativo:</strong> ${data.poloAtivo.map(parte => parte.name).join(', ')}</p>
                     <p><strong>Polo Passivo:</strong> ${data.poloPassivo.map(parte => parte.name).join(', ')}</p>
 
-                    <p><strong>Advogados Habilitados:</strong></p>
-                    <ul>
-                        ${data.advHabiltados.map(advogado => `
-                            <li>
-                                <p><strong>Parte:</strong> ${advogado.parte}</p>
-                                <p><strong>OAB:</strong> ${advogado.oab}</p>
-                                <p><strong>Nome:</strong> ${advogado.nome}</p>
-                                <p><strong>Dativo:</strong> ${advogado.dativo}</p>
-                                <p><strong>Recebe Intimação:</strong> ${advogado.recebeIntimacao}</p>
-                                <p><strong>Data de Habilitação:</strong> ${advogado.dataHabilitacao}</p>
-                                <p><strong>Serventia:</strong> ${advogado.serventia}</p>
-                            </li>
-                        `).join('')}
-                    </ul>
-
                     <p><strong>Movimentos:</strong></p>
                     <ul>
                         <li>
