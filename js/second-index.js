@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function consultarProcesso() {
         const inputValue = inputFieldTwo.value;
-        const apiUrl = 'http://3.17.65.203:3000/number_process';
+        const apiUrl = 'https://api-scraping.api-node-aws.shop/number_process';
 
         try {
             loadingIndicator.style.display = 'block'; 
